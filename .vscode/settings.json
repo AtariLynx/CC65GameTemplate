@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/*.o": true,
+        "**/*.s": { "when": "$(basename).c" },
+        "**/*.pal": false,
+        "**/*.spr": false,
+        "**/*.vcxproj*": true
+    },
+    "makefile.configurations": [
+        {
+            "name": "CC65 Debug",
+            "makeArgs": ["BUILD=debug"]
+        },
+        {
+            "name": "CC65 Release",
+            "makeArgs": ["BUILD=release"]
+        }
+    ],
+    "makefile.buildLog": "build.txt"
+}
