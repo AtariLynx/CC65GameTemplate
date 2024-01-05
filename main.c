@@ -20,14 +20,16 @@ unsigned char restarts;
 void initialize() 
 {
 	tgi_install(&tgi_static_stddrv);
-	tgi_init(); 
+	tgi_setframerate(75);
+	tgi_init();
 	joy_install(&joy_static_stddrv); 
 
 	CLI();
 
 	while (tgi_busy());
 
-	tgi_setpalette(palette);
+	//tgi_setpalette(palette);
+	tgi_setpalette(tgi_getdefpalette());
 	 
 	tgi_setcolor(COLOR_WHITE);
 	tgi_setbgcolor(COLOR_BLACK);

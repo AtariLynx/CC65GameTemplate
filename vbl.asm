@@ -19,7 +19,7 @@ _minutes:
 
 	inc _framecount
 	lda _framecount
-	cmp #60
+	cmp #75
 	bne done
 	
 	dec _seconds
