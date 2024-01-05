@@ -39,6 +39,8 @@ void initialize()
 
 unsigned char read_input()
 {
+	unsigned char data, count = 0;
+	char text[20];
 	unsigned char joy = joy_read(JOY_1);
 
 	if (reset == true)
@@ -55,6 +57,39 @@ unsigned char read_input()
 		case 'P':
 			if (halted)
 			{
+				// MIKEY.timer4.control = 0x18; // %00011000
+				// MIKEY.timer4.reload = 12; //0x01;
+
+				// MIKEY.serctl = 0x04|0x01;
+				// // Dummy read
+				// data = MIKEY.serdat;
+				// MIKEY.serctl = 0x10|0x04|0x01|0x08; // 0x40|
+
+				// // Clear receive buffer
+				// while ((MIKEY.serctl & 0x40) == 0x40)
+				// {
+				// 	data = MIKEY.serdat;
+				// }
+
+				// MIKEY.serctl = 0x40 | 0x10 | 0x04 | 0x01 | 0x08;
+
+				// while (true)
+				// {
+				// 	tgi_clear();
+				// 	itoa(MIKEY.timer4.count, text, 10);
+				// 	tgi_outtextxy(10, 40, text);
+				// 	joy = joy_read(JOY_1);
+				// 	itoa(joy, text, 10);
+				// 	tgi_outtextxy(10, 50, text);
+				// 	itoa(MIKEY.serctl, text, 16);
+				// 	tgi_outtextxy(10, 60, text);
+				// 	//itoa(receivecount, text, 10);
+				// 	//tgi_outtextxy(10, 70, text);
+				// 	tgi_outtextxy(10, 10, "Upload your game!");
+				// 	tgi_updatedisplay();
+				// 	while (tgi_busy());
+				// }
+
 				halted = false;
 			}
 			else
@@ -98,7 +133,7 @@ int main(void)
 	{
 		lynx_load((int)&GAME_FILENR);
 		play_game();
-		restarts++;
+		++restarts;
 	}
 
 	return EXIT_SUCCESS;

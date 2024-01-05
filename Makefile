@@ -45,7 +45,7 @@ AFLAGS=-I $(CA65_INC) -t $(SYS) -D $(BUILD)
 CFLAGS=-I ./includes -t $(SYS) --add-source -O -Or -Cl -Os -D $(BUILD)
 
 target = atarilynxgame.lnx 
-objects = lnxheader.o directory.o main.o game/game.o vbl.o \
+objects = lnxheader.o uploader.o directory.o main.o game/game.o vbl.o \
 		  
 ifeq ($(BUILD),release)
 objects += encrypt1024.o title.o

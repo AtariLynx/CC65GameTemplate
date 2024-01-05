@@ -21,6 +21,10 @@
 	.import __GAME_DATA_SIZE__
 	.import __GAME_RODATA_SIZE__
 
+	.import __UPCODE_SIZE__
+	.import __UPCODE_LOAD__
+	.import __UPDATA_SIZE__
+
 	.segment "DIRECTORY"
 
 .macro entry old_off, old_len, new_off, new_block, new_len, new_size, new_addr
@@ -57,5 +61,8 @@ entry __STARTOFDIRECTORY__+(__DIRECTORY_END__-__DIRECTORY_START__), 0, mainoff, 
 
 _GAME_FILENR=_MAIN_FILENR+1
 entry mainoff, mainlen, gameoff, gameblock, gamelen, __GAME_CODE_SIZE__+__GAME_RODATA_SIZE__+__GAME_DATA_SIZE__, __GAME_CODE_LOAD__
+
+_UPLOAD_FILENR=_GAME_FILENR+1
+entry gameoff, gamelen, uploadoff, uploadblock, uploadlen, __UPCODE_SIZE__ + __UPDATA_SIZE__, __UPCODE_LOAD__
 
 __DIRECTORY_END__:
