@@ -6,14 +6,9 @@
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Alpine version: 3.10, 3.11, ..., 3.18
 		"args": { 
-			"VARIANT": "3.18",
+			"VARIANT": "3.20",
 			"CC65_VERSION": "latest"
 		}
-	},
-
-	"features": {
-		"ghcr.io/atarilynx/devcontainers/make_lnx:latest": {},
-		"ghcr.io/atarilynx/devcontainers/sprpck:latest": {}
 	},
 	
 	// Set *default* container specific settings.json values on container create. 
@@ -25,11 +20,16 @@
 			"extensions": [
 				"ms-vscode.makefile-tools",
 				"ms-vscode.hexeditor"
-			] 
+			]
 		}
 	},
 
 	"postStartCommand": "",
+
+	"features": {
+		"ghcr.io/atarilynx/devcontainers/make_lnx:latest": {},
+		"ghcr.io/atarilynx/devcontainers/sprpck:latest": {}
+	},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	// Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
