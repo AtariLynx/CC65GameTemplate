@@ -8,11 +8,11 @@
     },
     "makefile.configurations": [
         {
-            "name": "CC65 Debug",
+            "name": "cc65 Debug",
             "makeArgs": ["BUILD=debug"]
         },
         {
-            "name": "CC65 Release",
+            "name": "cc65 Release",
             "makeArgs": ["BUILD=release"]
         }
     ],

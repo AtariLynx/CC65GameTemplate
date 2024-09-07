@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CC65 Make Build (Release)",
+            "label": "cc65 Make Build (Release)",
             "type": "process",
             "command": "make",
             "args": [
@@ -18,7 +18,7 @@
             }
         },
         {
-            "label": "CC65 Make Build (Debug)",
+            "label": "cc65 Make Build (Debug)",
             "type": "process",
             "command": "make",
             "args": [
@@ -32,7 +32,7 @@
             }
         },
         {
-            "label": "CC65 Clean",
+            "label": "cc65 Clean",
             "type": "process",
             "command": "make",
             "args": [
